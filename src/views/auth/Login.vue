@@ -22,11 +22,13 @@
 
 <script>
 import useLogin from "@/composables/useLogin";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 export default {
   setup() {
+    onMounted(() => (document.title = "Map Blog | Log in"));
+
     const { error, login, isPending } = useLogin();
     const router = useRouter();
     const email = ref("");

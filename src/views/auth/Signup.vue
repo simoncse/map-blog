@@ -14,11 +14,12 @@
 
 <script>
 import useSignup from "@/composables/useSignup";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 export default {
   setup() {
+    onMounted(() => (document.title = "Map Blog | Sign Up"));
     const router = useRouter();
     const { error, signup, isPending } = useSignup();
     const displayName = ref("");

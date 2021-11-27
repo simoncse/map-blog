@@ -13,9 +13,11 @@ import Map from "../components/map/Map.vue";
 import SideView from "../components/sideview/SideView.vue";
 import Notifcation from "../components/notification/Notification.vue";
 import { showN, toggleShowN } from "../components/notification/state";
+import { onMounted } from "vue";
 export default {
   components: { Map, SideView, Notifcation },
   setup() {
+    onMounted(() => (document.title = "Map Blog | Home"));
     return { showN, toggleShowN };
   },
 };
